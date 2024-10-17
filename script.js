@@ -1,35 +1,51 @@
-$(document).ready(function() {
-    // Fetching anime recommendation (dummy data for demonstration)
-    const animeRecommendations = ["Attack on Titan", "My Hero Academia", "Demon Slayer", "Jujutsu Kaisen"];
-    const randomAnime = animeRecommendations[Math.floor(Math.random() * animeRecommendations.length)];
-    $('#anime-recommendation').text(randomAnime);
+const animeList = ["Blue Lock", "One Piece", "Bleach", "Hunter x Hunter (HxH)", "Black Clover", "Hell's Paradise", "Dandadan", "7 Deadly Sins", "Fairy Tail"];
+const animeAPI = 'https://api.jikan.moe/v4/anime/';
+const footballAPI = 'https://football-news-aggregator-live.p.rapidapi.com/news/fourfourtwo/bundesliga';
+const apiKey = 'fba7c539c6mshfc3a999bb77a83dp124d46jsncd98fbb751b4';
 
-    // Fetching football news (dummy data for demonstration)
-    const footballNews = [
-        "Team A wins the championship!",
-        "Player X transfers to Team Y.",
-        "Upcoming match: Team Z vs Team W."
-    ];
-    const randomNews = footballNews[Math.floor(Math.random() * footballNews.length)];
-    $('#football-news-content').text(randomNews);
+function fetchAnimeImages() {
+    animeList.forEach(async (anime) => {
+        try {
+            const response = await fetch(`${animeAPI}${anime}`);
+            const data = await response.json();
+            const imageUrl = data.data.images.jpg.large_image_url; // Adjust based on the actual API response structure
 
-    // Random character of the day (dummy character for demonstration)
-    const characters = ["Naruto Uzumaki", "Luffy D. Monkey", "Ichigo Kurosaki", "Goku"];
-    const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
-    $('#character').text(randomCharacter);
-
-    // Quote of the day (dummy data for demonstration)
-    const quotes = [
-        "Believe in yourself!",
-        "Dream big, work hard!",
-        "Every day is a new beginning."
-    ];
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    $('#quote').text(randomQuote);
-
-    // Poll functionality (dummy implementation)
-    $('.poll-option').on('click', function() {
-        const selectedOption = $(this).text();
-        $('#poll-results').text(`You voted for: ${selectedOption}`);
+            const li = document.createElement('li');
+            li.innerHTML = `<img src="${imageUrl}" alt="${anime}"><span>${anime}</span>`;
+            document.getElementById('anime-list').appendChild(li);
+        } catch (error) {
+            console.error('Error fetching anime images:', error);
+        }
     });
+}
+
+function fetchFootballNews() {
+    fetch(footballAPI, {
+        method: 'GET',
+        headers: {
+            'x-rapidapi-host': 'football-news-aggregator-live.p.rapidapi.com',
+            'x-rapidapi-key': apiKey
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const footballContent = document.getElementById('football-content');
+        data.forEach(news => {
+            const article = document.createElement('article');
+            article.innerHTML = `
+                <h3>${news.title}</h3>
+                <p>${news.description}</p>
+                <a href="${news.url}" target="_blank">Read more</a>
+            `;
+            footballContent.appendChild(article);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching football news:', error);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetchAnimeImages();
+    fetchFootballNews();
 });
