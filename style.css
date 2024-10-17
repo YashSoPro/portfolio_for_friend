@@ -9,6 +9,7 @@
 body {
     background-image: url('https://i.ibb.co/CbzvX6X/background-anime.jpg');
     background-size: cover;
+    background-position: center;
     color: #fff;
     text-align: center;
     padding: 50px;
@@ -21,7 +22,7 @@ header {
 
 h1 {
     font-size: 3em;
-    color: #ffcb05; /* Bright anime color */
+    color: #ffcb05;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -69,20 +70,10 @@ p {
     background: rgba(255, 255, 255, 0.2);
 }
 
-.anime-list {
+ol {
     text-align: left;
     margin-top: 15px;
-}
-
-.anime-item {
-    margin-bottom: 20px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
+    padding-left: 20px;
 }
 
 footer {
