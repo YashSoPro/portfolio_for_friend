@@ -3,82 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohan's Anime & Football Multiverse</title>
+    <title>Rohan's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="anime.js"></script>
+    <script src="mo.js"></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to Rohan's Dank Corner of the Internet 🚀</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About This Noob</a></li>
-                <li><a href="#anime">Anime Addiction</a></li>
-                <li><a href="#football">⚽ Fever</a></li>
-                <li><a href="#school">School Survival Guide</a></li>
-                <li><a href="#quiz">Weeb Quiz</a></li>
-            </ul>
-        </nav>
+        <h1>Welcome to Rohan's Portfolio</h1>
+        <p>Anime Lover | Football Enthusiast</p>
     </header>
 
     <main>
-        <section id="about">
-            <h2>Who Dis? 🤔</h2>
-            <p>Sup, fellow internet dwellers! I'm Rohan, your friendly neighborhood anime otaku and football fanatic. Currently navigating the treacherous waters of high school while trying to maintain my rank in every possible anime game. If you hear someone yelling "GOAAAL!" at 3 AM, that's probably me watching football highlights. 😅</p>
-            <div id="skill-meter"></div>
+        <section id="anime-recommendations">
+            <h2>Today's Anime Recommendation</h2>
+            <div id="anime-recommendation"></div>
         </section>
 
-        <section id="anime">
-            <h2>My Anime Watchlist (a.k.a. "Why I Have No Social Life")</h2>
-            <p>Here's why I'm always broke and my eyes are rectangles:</p>
-            <ul id="anime-list">
-                <!-- List will be populated by JavaScript -->
-            </ul>
-            <div id="anime-gallery"></div>
-            <div id="anime-character-of-the-day"></div>
-            <div id="favorite-quotes"></div>
+        <section id="football-news">
+            <h2>Latest Football News</h2>
+            <div id="football-news-content"></div>
         </section>
 
-        <section id="football">
-            <h2>Football: Where I Pretend I'm Fit</h2>
-            <p>When I'm not binge-watching anime, you can find me trying to bend it like Beckham (and failing miserably). 🥅⚽</p>
-            <div id="football-content"></div>
-            <div id="countdown-timer"></div>
+        <section id="random-character">
+            <h2>Random Character of the Day</h2>
+            <div id="character"></div>
         </section>
 
-        <section id="school">
-            <h2>School Life: The Real Isekai</h2>
-            <p>Plot twist: I'm actually a protagonist in a school anime, but with less cool powers and more homework. 📚😭</p>
-            <div id="school-content"></div>
-            <div id="timeline"></div>
+        <section id="quote-of-the-day">
+            <h2>Quote of the Day</h2>
+            <div id="quote"></div>
         </section>
 
-        <section id="quiz">
-            <h2>The "Are You Even a Real Weeb?" Quiz</h2>
-            <div id="quiz-container"></div>
-        </section>
-
-        <section id="guestbook">
-            <h2>Drop a Line (No, Not THAT Line, Naruto Fans)</h2>
-            <div id="guestbook-entries"></div>
-            <form id="guestbook-form">
-                <input type="text" id="guest-name" placeholder="Your Name (or Favorite Character)" required>
-                <textarea id="guest-message" placeholder="Leave a message (Anime quotes accepted)" required></textarea>
-                <button type="submit">Submit (Don't be shy!)</button>
-            </form>
+        <section id="poll">
+            <h2>Poll: What's your favorite anime this season?</h2>
+            <div>
+                <button class="poll-option">Anime 1</button>
+                <button class="poll-option">Anime 2</button>
+                <button class="poll-option">Anime 3</button>
+                <button class="poll-option">Anime 4</button>
+            </div>
+            <div id="poll-results"></div>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 Rohan's Portfolio. Made with love, instant ramen, and too much caffeine. 💻☕</p>
-        <div id="social-links"></div>
+        <p>© 2024 Rohan's Portfolio. All rights reserved.</p>
     </footer>
-
-    <button id="dark-mode-toggle">Toggle Anime Mode 🌙</button>
-    <select id="language-select">
-        <option value="en">English</option>
-        <option value="hi">Hinglish</option>
-    </select>
 
     <script src="script.js"></script>
 </body>
-                </html>
+</html>
