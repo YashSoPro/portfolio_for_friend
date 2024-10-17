@@ -3,53 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohan's Portfolio</title>
+    <title>Rohan's Anime & Football Multiverse</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mo.js/0.288.4/mo.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>Rohan's Portfolio</h1>
-        <h2>Football Lover & Anime Enthusiast!</h2>
+        <h1>Welcome to Rohan's Dank Corner of the Internet 🚀</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About This Noob</a></li>
+                <li><a href="#anime">Anime Addiction</a></li>
+                <li><a href="#football">⚽ Fever</a></li>
+                <li><a href="#school">School Survival Guide</a></li>
+                <li><a href="#quiz">Weeb Quiz</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section class="bio">
-            <h3>About Me</h3>
-            <p>
-                Hi! I'm Rohan, a tech enthusiast who loves coding, football, and anime! I strive to blend creativity with technology to create engaging projects.
-            </p>
+        <section id="about">
+            <h2>Who Dis? 🤔</h2>
+            <p>Sup, fellow internet dwellers! I'm Rohan, your friendly neighborhood anime otaku and football fanatic. Currently navigating the treacherous waters of high school while trying to maintain my rank in every possible anime game. If you hear someone yelling "GOAAAL!" at 3 AM, that's probably me watching football highlights. 😅</p>
+            <div id="skill-meter"></div>
         </section>
 
-        <section class="anime-list">
-            <h3>My Favorite Animes:</h3>
-            <ul>
-                <li>1. Blue Lock</li>
-                <li>2. One Piece</li>
-                <li>3. Bleach</li>
-                <li>4. Hunter x Hunter (HxH)</li>
-                <li>5. Black Clover</li>
-                <li>6. Hell's Paradise</li>
-                <li>7. Dandadan</li>
-                <li>8. 7 Deadly Sins</li>
-                <li>9. Fairy Tail</li>
+        <section id="anime">
+            <h2>My Anime Watchlist (a.k.a. "Why I Have No Social Life")</h2>
+            <p>Here's why I'm always broke and my eyes are rectangles:</p>
+            <ul id="anime-list">
+                <!-- List will be populated by JavaScript -->
             </ul>
+            <div id="anime-gallery"></div>
+            <div id="anime-character-of-the-day"></div>
+            <div id="favorite-quotes"></div>
         </section>
 
-        <section class="images">
-            <h3>Inspirations</h3>
-            <div class="image-gallery">
-                <img src="https://ibb.co/VpMTtf9" alt="Background Image" style="width:100%; max-width:600px;">
-                <img src="https://ibb.co/CbzvX6X" alt="Anime Character" style="width:100%; max-width:600px;">
-            </div>
+        <section id="football">
+            <h2>Football: Where I Pretend I'm Fit</h2>
+            <p>When I'm not binge-watching anime, you can find me trying to bend it like Beckham (and failing miserably). 🥅⚽</p>
+            <div id="football-content"></div>
+            <div id="countdown-timer"></div>
+        </section>
+
+        <section id="school">
+            <h2>School Life: The Real Isekai</h2>
+            <p>Plot twist: I'm actually a protagonist in a school anime, but with less cool powers and more homework. 📚😭</p>
+            <div id="school-content"></div>
+            <div id="timeline"></div>
+        </section>
+
+        <section id="quiz">
+            <h2>The "Are You Even a Real Weeb?" Quiz</h2>
+            <div id="quiz-container"></div>
+        </section>
+
+        <section id="guestbook">
+            <h2>Drop a Line (No, Not THAT Line, Naruto Fans)</h2>
+            <div id="guestbook-entries"></div>
+            <form id="guestbook-form">
+                <input type="text" id="guest-name" placeholder="Your Name (or Favorite Character)" required>
+                <textarea id="guest-message" placeholder="Leave a message (Anime quotes accepted)" required></textarea>
+                <button type="submit">Submit (Don't be shy!)</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Rohan's Portfolio. All Rights Reserved.</p>
+        <p>© 2024 Rohan's Portfolio. Made with love, instant ramen, and too much caffeine. 💻☕</p>
+        <div id="social-links"></div>
     </footer>
+
+    <button id="dark-mode-toggle">Toggle Anime Mode 🌙</button>
+    <select id="language-select">
+        <option value="en">English</option>
+        <option value="hi">Hinglish</option>
+    </select>
 
     <script src="script.js"></script>
 </body>
-</html>
+                </html>
