@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,114 +6,53 @@
 }
 
 body {
-    background-image: url('https://i.ibb.co/CbzvX6X/background-anime.jpg');
+    background-image: url('https://ibb.co/CbzvX6X');
     background-size: cover;
-    background-position: center;
     color: #fff;
     text-align: center;
-    padding: 50px;
-    transition: background 0.3s ease, color 0.3s ease;
 }
 
-header {
-    margin-bottom: 50px;
+.container {
+    padding: 20px;
 }
 
-h1 {
-    font-size: 3em;
-    color: #ffcb05;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+.hero {
+    margin: 50px 0;
 }
 
-button {
-    padding: 10px 15px;
-    background-color: #ffcb05;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.profile-img {
+    width: 200px;
+    border-radius: 50%;
 }
 
-button:hover {
-    background-color: #e0a800;
+.name {
+    font-size: 2.5em;
+    margin: 10px 0;
 }
 
-p {
-    font-size: 1.2em;
+.title {
+    font-size: 1.5em;
+    margin: 10px 0;
 }
 
-#about {
+.what-do-i-do {
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 40px;
+    border-radius: 10px;
+    margin: 20px 0;
 }
 
-#interests {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.interest-card {
-    background: rgba(0, 0, 0, 0.6);
+.anime-list {
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    border-radius: 15px;
-    width: 300px;
-    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 10px;
 }
 
-.interest-card:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+.anime-list ul {
+    list-style: none;
 }
 
-ol {
-    text-align: left;
-    margin-top: 15px;
-    padding-left: 20px;
-}
-
-footer {
-    margin-top: 50px;
-    font-size: 0.9em;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background: #222;
-    color: #ddd;
-}
-
-body.dark-mode header,
-body.dark-mode #about,
-body.dark-mode .interest-card {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode button {
-    background-color: #666;
-    color: #fff;
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 300px;
-    margin: 0 auto;
-}
-
-input, textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-button[type="submit"] {
-    background-color: #ffcb05;
-    color: #000;
-    cursor: pointer;
+.anime-list li {
+    margin: 10px 0;
+    font-size: 1.2em;
 }
