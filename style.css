@@ -1,39 +1,112 @@
 body {
-    background-image: url('path/to/your/background-image.jpg'); /* Replace with your actual image path */
-    background-size: cover; /* Makes the background cover the entire page */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    color: #fff; /* Change text color for better visibility */
-    font-family: Arial, sans-serif; /* Example font */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://ibb.co/CBLZtk4');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7); /* Optional: semi-transparent background for the header */
-    padding: 20px; /* Padding for the header */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    text-align: center;
 }
 
-h1, h2 {
-    margin: 0; /* Remove default margin for headings */
+h1 {
+    font-size: 2.5rem;
 }
 
 nav ul {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none;
+    padding: 0;
 }
 
 nav ul li {
-    display: inline; /* Display list items inline */
-    margin-right: 20px; /* Space between items */
+    display: inline;
+    margin: 0 15px;
 }
 
-nav a {
-    color: #fff; /* Link color */
-    text-decoration: none; /* Remove underline */
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-nav a:hover {
-    text-decoration: underline; /* Underline on hover */
+h2 {
+    border-bottom: 2px solid #ff4081;
+    padding-bottom: 10px;
 }
 
-/* Additional styles for sections, footer, etc. */
+section {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+#anime-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#anime-list li {
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#social-links {
+    margin: 10px 0;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff4081;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e91e63;
+}
+
+#football-content {
+    margin-top: 20px;
+}
+
+#countdown-timer {
+    font-weight: bold;
+}
+
+#timeline {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+#timeline div {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 5px 0;
+}
