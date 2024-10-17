@@ -1,270 +1,49 @@
 body {
-    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png');
-    transition: all 0.3s ease;
+    color: #333;
 }
 
 header {
-    background-color: #ff4500;
-    color: #fff;
     text-align: center;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    background: #007BFF;
+    color: white;
 }
 
-h1 {
-    font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-nav ul {
-    padding: 0;
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffd700;
-    transform: scale(1.1);
+h1, h2 {
+    margin: 0;
 }
 
 main {
-    max-width: 1200px;
-    margin: 20px auto;
     padding: 20px;
 }
 
 section {
-    background-color: #fff;
-    margin-bottom: 30px;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-h2 {
-    color: #ff4500;
-    border-bottom: 2px solid #ff4500;
-    padding-bottom: 10px;
-}
-
-#anime ul {
-    columns: 2;
-    -webkit-columns: 2;
-    -moz-columns: 2;
-    list-style-type: none;
-    padding: 0;
-}
-
-#anime ul li {
-    margin-bottom: 10px;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-#anime ul li:hover {
-    background-color: #ffd700;
-    transform: scale(1.05);
-}
-
-#anime-gallery, #football-content, #school-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.anime-card, .football-card, .school-card {
-    width: 200px;
-    margin: 15px;
-    text-align: center;
-    background-color: #f9f9f9;
+    margin-bottom: 20px;
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.anime-card:hover, .football-card:hover, .school-card:hover {
-    transform: translateY(-10px) rotate(3deg);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.anime-card img, .football-card img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.skill-bar {
-    margin-bottom: 15px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.skill-level {
-    height: 20px;
-    background-color: #ff4500;
-    text-align: right;
-    color: white;
-    transition: width 1s ease-in-out;
-}
-
-#quiz-container {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-#quiz-container input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 2px solid #ff4500;
-    border-radius: 5px;
-}
-
-#quiz-container button {
-    background-color: #ff4500;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#quiz-container button:hover {
-    background-color: #ffd700;
-    color: #333;
-}
-
-#guestbook-form input[type="text"],
-#guestbook-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #ff4500;
-    border-radius: 5px;
-}
-
-#guestbook-form button {
-    background-color: #ff4500;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#guestbook-form button:hover {
-    background-color: #ffd700;
-    color: #333;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
 }
 
-#dark-mode-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: #fff;
+.poll-option {
+    margin: 5px;
+    padding: 10px;
+    background-color: #28a745;
     border: none;
-    padding: 10px 20px;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-#dark-mode-toggle:hover {
-    background-color: #ffd700;
-    color: #333;
-}
-
-#language-select {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.dark-mode {
-    background-color: #222;
-    color: #f0f0f0;
-}
-
-.dark-mode section {
-    background-color: #333;
-    color: #f0f0f0;
-}
-
-.dark-mode h2 {
-    color: #ffd700;
-    border-bottom-color: #ffd700;
-}
-
-.dark-mode .anime-card, .dark-mode .football-card, .dark-mode .school-card {
-    background-color: #444;
-    color: #f0f0f0;
-}
-
-@media (max-width: 768px) {
-    #anime ul {
-        columns: 1;
-        -webkit-columns: 1;
-        -moz-columns: 1;
-    }
-    
-    .anime-card, .football-card, .school-card {
-        width: 100%;
-    }
-}
-
-@keyframes rainbow {
-    0% { color: red; }
-    14% { color: orange; }
-    28% { color: yellow; }
-    42% { color: green; }
-    57% { color: blue; }
-    71% { color: indigo; }
-    85% { color: violet; }
-    100% { color: red; }
-}
-
-.rainbow-text {
-    animation: rainbow 5s infinite;
+.poll-option:hover {
+    background-color: #218838;
 }
