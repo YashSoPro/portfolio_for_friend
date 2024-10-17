@@ -5,63 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohan's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mojs/0.288.4/mo.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Rohan's World!</h1>
-        <p>A fun journey through Anime, Football, and Code</p>
-        <button id="toggle-dark-mode">Toggle Dark Mode</button>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hey there! I’m Rohan, an anime enthusiast, football fan, and just a beginner in coding. When my code breaks, I yell "Nani?!"—just like in anime!</p>
-    </section>
-
-    <section id="interests">
-        <h2>My Interests</h2>
-        <div class="interest-card">
-            <h3>Anime 🎌</h3>
-            <p>Mere kuch favorite anime yeh rahe (priority wise):</p>
-            <ol>
-                <li><strong>Blue Lock</strong> – Football se related aur aajkal mera top favorite hai!</li>
-                <li><strong>One Piece</strong> – 1000+ episodes, aur Luffy ka treasure abhi tak nahi mila. Smh!</li>
-                <li><strong>Bleach</strong> – Ichigo ka fight aur Renji ka attitude, full power-packed.</li>
-                <li><strong>Hunter x Hunter</strong> – Gon ka baap khojna aur Killua ki lightning speed—epic combo!</li>
-                <li><strong>Black Clover</strong> – No magic, no problem—Asta is all about that grind!</li>
-                <li><strong>Hell's Paradise</strong> – Ninja, immortality, aur demons. Sounds like an average weekend, right?</li>
-                <li><strong>Dandadan</strong> – Aliens + supernatural beings = total chaos, and I love it!</li>
-                <li><strong>7 Deadly Sins</strong> – Kingdom ko bachane ki koshish and Meliodas ka attitude—perfect mix!</li>
-                <li><strong>Fairy Tail</strong> – Natsu and friends giving family reunion vibes, but with magic!</li>
-            </ol>
+    <div class="container">
+        <div class="hero">
+            <img src="https://ibb.co/VpMTtf9" alt="Rohan" class="profile-img">
+            <h1 class="name">Rohan Kumar</h1>
+            <h2 class="title">Creative Technologist</h2>
         </div>
-
-        <div class="interest-card">
-            <h3>Football ⚽</h3>
-            <p>Football is my passion! I enjoy watching and sometimes playing. Favorite team? FC Barcelona—Messi vibes FTW!</p>
+        <div class="what-do-i-do">
+            <h2>What do I do?</h2>
+            <p>
+                As a developer with a passion for creativity, I focus on both design and development aspects of projects, from start to finish. I prioritize creating unique layouts and typography that makes the website stand out.
+            </p>
         </div>
-
-        <div class="interest-card">
-            <h3>Coding 👾</h3>
-            <p>I'm learning the basics of coding. When the code works, I feel like a genius; when it doesn’t, I feel like Zoro lost in the woods!</p>
+        <div class="anime-list">
+            <h2>My Favorite Anime</h2>
+            <ul>
+                <li>1. Blue Lock</li>
+                <li>2. One Piece</li>
+                <li>3. Bleach</li>
+                <li>4. Hunter x Hunter (HxH)</li>
+                <li>5. Black Clover</li>
+                <li>6. Hell's Paradise</li>
+                <li>7. Dandadan</li>
+                <li>8. 7 Deadly Sins</li>
+                <li>9. Fairy Tail</li>
+            </ul>
         </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>"Believe it!" - Naruto Uzumaki</p>
-        <p>Made with love by Rohan.</p>
-    </footer>
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
