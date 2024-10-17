@@ -1,36 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Anime.js Animation
-    anime({
-        targets: '.name',
-        translateY: [-100, 0],
-        opacity: [0, 1],
-        duration: 1500,
-        easing: 'easeOutExpo'
-    });
-
-    anime({
-        targets: '.title',
-        translateY: [-100, 0],
-        opacity: [0, 1],
-        duration: 1500,
-        delay: 500,
-        easing: 'easeOutExpo'
-    });
-
-    // Mo.js Animation Example
-    const burst = new mojs.Burst({
-        radius: {0: 50},
-        count: 15,
-        angle: 30,
-        children: {
-            shape: 'circle',
-            radius: 4,
-            fill: '#ffeb3b',
-            stroke: 'rgba(255, 255, 255, 0.6)',
-            strokeWidth: 2,
-            delay: mojs.stagger(15, {start: 0}),
-        }
-    });
-
-    burst.replay();
+// Sample animation with anime.js
+anime({
+    targets: 'h1',
+    translateY: [-50, 0],
+    opacity: [0, 1],
+    easing: 'easeOutExpo',
+    duration: 1000
 });
+
+// Sample animation with mo.js
+const circle = new mojs.Shape({
+    shape: 'circle',
+    radius: 50,
+    fill: 'red',
+    isShowEnd: true,
+    duration: 3000,
+    easing: 'cubic.out',
+});
+circle.play();
