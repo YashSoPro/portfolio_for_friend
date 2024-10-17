@@ -1,19 +1,36 @@
-// Dark Mode Toggle Functionality
-const toggleButton = document.getElementById("toggle-dark-mode");
+document.addEventListener('DOMContentLoaded', function() {
+    // Anime.js Animation
+    anime({
+        targets: '.name',
+        translateY: [-100, 0],
+        opacity: [0, 1],
+        duration: 1500,
+        easing: 'easeOutExpo'
+    });
 
-toggleButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        toggleButton.textContent = "Light Mode Toggle Karo";
-    } else {
-        toggleButton.textContent = "Dark Mode Toggle Karo";
-    }
-});
+    anime({
+        targets: '.title',
+        translateY: [-100, 0],
+        opacity: [0, 1],
+        duration: 1500,
+        delay: 500,
+        easing: 'easeOutExpo'
+    });
 
-// Contact Form Submission (Just for demo purposes, no actual submission)
-const contactForm = document.getElementById("contact-form");
-contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    alert("Message sent! (Ab kuch nahi hoga, bas demo hai!)");
-    contactForm.reset();
+    // Mo.js Animation Example
+    const burst = new mojs.Burst({
+        radius: {0: 50},
+        count: 15,
+        angle: 30,
+        children: {
+            shape: 'circle',
+            radius: 4,
+            fill: '#ffeb3b',
+            stroke: 'rgba(255, 255, 255, 0.6)',
+            strokeWidth: 2,
+            delay: mojs.stagger(15, {start: 0}),
+        }
+    });
+
+    burst.replay();
 });
