@@ -1,26 +1,20 @@
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background-image: url('https://ibb.co/CBLZtk4');
+    font-family: Arial, sans-serif;
+    background-image: url('https://ibb.co/CBLZtk4'); /* Updated background image link */
     background-size: cover;
     background-position: center;
-    color: #ffffff;
+    color: #fff; /* Change text color for better visibility */
 }
 
 header {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
+    padding: 20px;
     text-align: center;
 }
 
-h1 {
-    font-size: 2.5rem;
-}
-
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -30,31 +24,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-}
-
-h2 {
-    border-bottom: 2px solid #ff4081;
-    padding-bottom: 10px;
 }
 
 section {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-#anime-list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#anime-list li {
-    margin: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
     border-radius: 5px;
 }
 
@@ -64,49 +41,10 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#social-links {
-    margin: 10px 0;
-}
-
-input[type="text"],
-textarea {
+input, textarea {
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
+    margin-top: 10px;
     border: none;
     border-radius: 5px;
-}
-
-button {
-    background-color: #ff4081;
-    color: #ffffff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #e91e63;
-}
-
-#football-content {
-    margin-top: 20px;
-}
-
-#countdown-timer {
-    font-weight: bold;
-}
-
-#timeline {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0;
-}
-
-#timeline div {
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    margin: 5px 0;
 }
