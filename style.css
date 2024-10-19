@@ -1,78 +1,146 @@
-const animeList = [
-    "Blue Lock", "One Piece", "Bleach", "Hunter x Hunter", "Black Clover",
-    "Hell's Paradise", "Dandadan", "The Seven Deadly Sins", "Fairy Tail"
-];
-
-async function fetchAnimeData() {
-    // ... (previous fetchAnimeData function remains the same)
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --section-bg: rgba(255, 255, 255, 0.7);
 }
 
-function getGenZStatus(status) {
-    // ... (previous getGenZStatus function remains the same)
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://i.ibb.co/CBLZtk4/anime-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-async function fetchFootballNews() {
-    // ... (previous fetchFootballNews function remains the same)
+body.dark-theme {
+    --bg-color: #333333;
+    --text-color: #ffffff;
+    --header-bg: rgba(0, 0, 0, 0.8);
+    --section-bg: rgba(0, 0, 0, 0.7);
 }
 
-function toggleTheme() {
-    // ... (previous toggleTheme function remains the same)
+header {
+    background-color: var(--header-bg);
+    padding: 20px;
+    text-align: center;
 }
 
-async function fetchMemes() {
-    const memeContainer = document.getElementById('meme-container');
-    memeContainer.innerHTML = ''; // Clear existing memes
-
-    try {
-        const response = await fetch('https://api.imgflip.com/get_memes');
-        if (!response.ok) throw new Error('Failed to fetch memes');
-        const data = await response.json();
-
-        // Get 3 random memes
-        const randomMemes = data.data.memes
-            .sort(() => 0.5 - Math.random())
-            .slice(0, 3);
-
-        randomMemes.forEach(meme => {
-            const memeDiv = document.createElement('div');
-            memeDiv.className = 'meme';
-            memeDiv.innerHTML = `
-                <img src="${meme.url}" alt="${meme.name}" style="max-width: 100%; height: auto;">
-                <p>${getMemeCaptionForAnimeAndFootball(meme.name)}</p>
-            `;
-            memeContainer.appendChild(memeDiv);
-        });
-    } catch (error) {
-        console.error('Error fetching memes:', error);
-        memeContainer.innerHTML = '<p>Bruh, meme loading failed. Big yikes. Try again later, fam.</p>';
-    }
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-function getMemeCaptionForAnimeAndFootball(memeName) {
-    const animeCaptions = [
-        "Me after a 12-hour anime binge:",
-        "When someone says anime is just for kids:",
-        "My reaction to the season finale:",
-        "Trying to explain the plot of One Piece in 30 seconds:",
-        "When my favorite character gets a power-up:",
-    ];
-
-    const footballCaptions = [
-        "Me celebrating a goal in my living room at 3 AM:",
-        "When the referee makes a bad call:",
-        "Trying to explain the offside rule to my friends:",
-        "Me pretending I can bend it like Beckham:",
-        "When my team scores in the 90th minute:",
-    ];
-
-    const allCaptions = [...animeCaptions, ...footballCaptions];
-    return allCaptions[Math.floor(Math.random() * allCaptions.length)];
+nav ul li {
+    margin: 0 15px;
+    padding: 5px 0;
 }
 
-// Initial calls to fetch data and set up the page
-fetchAnimeData();
-fetchFootballNews();
-fetchMemes();
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-// Event listener for theme toggle
-document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 20px;
+    background-color: var(--section-bg);
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #ffd700;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--header-bg);
+    margin-top: 40px;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+button {
+    background-color: #ffd700;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffec8b;
+}
+
+#anime-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#anime-gallery div {
+    margin: 10px;
+    text-align: center;
+}
+
+#anime-gallery img {
+    max-width: 200px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#anime-gallery img:hover {
+    transform: scale(1.05);
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: #ffec8b;
+}
+
+#meme-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+}
