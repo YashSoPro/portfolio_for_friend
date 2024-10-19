@@ -1,14 +1,16 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('https://ibb.co/CBLZtk4'); /* Updated background image link */
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://i.ibb.co/WxbKMqs/anime-background.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff; /* Change text color for better visibility */
+    background-attachment: fixed;
+    color: #fff;
+    line-height: 1.6;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     text-align: center;
 }
@@ -16,35 +18,89 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
+    padding: 5px 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 section {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 10px 0;
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+h1, h2 {
+    color: #ffd700;
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 40px;
 }
 
-input, textarea {
+input, textarea, button {
     width: 100%;
     padding: 10px;
     margin-top: 10px;
     border: none;
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+button {
+    background-color: #ffd700;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffec8b;
+}
+
+#anime-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#anime-gallery div {
+    margin: 10px;
+    text-align: center;
+}
+
+#anime-gallery img {
+    max-width: 200px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#anime-gallery img:hover {
+    transform: scale(1.05);
 }
