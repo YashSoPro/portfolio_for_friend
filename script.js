@@ -1,13 +1,33 @@
-async function fetchAnimeData() {
+async function fetchSelectedAnime() {
     const animeGallery = document.getElementById("anime-gallery");
     animeGallery.innerHTML = ''; // Clear existing images
 
+    // List of anime titles you want to display
+    const selectedAnimeTitles = [
+        "Blue Lock",
+        "One Piece",
+        "Bleach",
+        "Hunter x Hunter",
+        "Black Clover",
+        "Hell's Paradise",
+        "Dandadan",
+        "The Seven Deadly Sins",
+        "Fairy Tail"
+    ];
+
     try {
-        const response = await fetch('https://api.jikan.moe/v4/top/anime?limit=10');
+        // Fetch top anime (or search for a specific anime if required)
+        const response = await fetch('https://api.jikan.moe/v4/top/anime?limit=50');
         if (!response.ok) throw new Error('Failed to fetch anime data');
         const data = await response.json();
 
-        data.data.forEach(anime => {
+        // Filter the anime based on the titles you want to display
+        const filteredAnime = data.data.filter(anime => 
+            selectedAnimeTitles.includes(anime.title)
+        );
+
+        // Display the filtered anime
+        filteredAnime.forEach(anime => {
             const container = document.createElement("div");
             container.innerHTML = `
                 <h3>${anime.title}</h3>
@@ -16,33 +36,17 @@ async function fetchAnimeData() {
             `;
             animeGallery.appendChild(container);
         });
+
+        // If no anime found in the response
+        if (filteredAnime.length === 0) {
+            animeGallery.innerHTML = '<p>No matching anime found. Please check the titles or try again later.</p>';
+        }
+
     } catch (error) {
         console.error('Error fetching anime data:', error);
         animeGallery.innerHTML = '<p>Failed to load anime data. Please try again later.</p>';
     }
 }
 
-function displayMockFootballNews() {
-    const footballContent = document.getElementById("football-content");
-    footballContent.innerHTML = ''; // Clear existing news
-    
-    const mockNews = [
-        { title: "Bundesliga Recap", description: "Exciting matches from the weekend.", link: "#" },
-        { title: "Transfer Rumors", description: "Latest transfer gossip from German clubs.", link: "#" },
-        { title: "Player Spotlight", description: "Rising stars in the Bundesliga.", link: "#" }
-    ];
-
-    mockNews.forEach((news) => {
-        const newsItem = document.createElement("div");
-        newsItem.innerHTML = `
-            <h4>${news.title}</h4>
-            <p>${news.description}</p>
-            <a href="${news.link}" target="_blank">Read more</a>
-        `;
-        footballContent.appendChild(newsItem);
-    });
-}
-
-// Initial calls to fetch data
-fetchAnimeData();
-displayMockFootballNews();
+// Call the function to display the selected anime
+fetchSelectedAnime();
