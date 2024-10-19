@@ -1,65 +1,48 @@
-const footballNewsAPI = "https://football-news-aggregator-live.p.rapidapi.com/news/fourfourtwo/bundesliga";
-const nekosAPI = "https://nekos.life/api/v2/img";
-
-const animeTitles = [
-    "Naruto",
-    "One Piece",
-    "Attack on Titan",
-    "Death Note",
-    "My Hero Academia",
-    "Demon Slayer",
-    "Fullmetal Alchemist",
-    "Sword Art Online",
-    "Fairy Tail",
-    "Bleach",
-];
-
-// Function to fetch and display anime images
-async function fetchAnimeImages() {
+async function fetchAnimeData() {
     const animeGallery = document.getElementById("anime-gallery");
     animeGallery.innerHTML = ''; // Clear existing images
 
-    for (const title of animeTitles) {
-        const response = await fetch(nekosAPI);
+    try {
+        const response = await fetch('https://api.jikan.moe/v4/top/anime?limit=10');
+        if (!response.ok) throw new Error('Failed to fetch anime data');
         const data = await response.json();
-        const imgElement = document.createElement("img");
-        imgElement.src = data.url; // Use image URL from Nekos API
-        imgElement.alt = title;
-        imgElement.style.width = "200px"; // Set a width for the images
-        imgElement.style.margin = "10px"; // Add some margin between images
 
-        const titleElement = document.createElement("h3");
-        titleElement.textContent = title;
-
-        const container = document.createElement("div");
-        container.appendChild(titleElement);
-        container.appendChild(imgElement);
-        animeGallery.appendChild(container);
+        data.data.forEach(anime => {
+            const container = document.createElement("div");
+            container.innerHTML = `
+                <h3>${anime.title}</h3>
+                <img src="${anime.images.jpg.image_url}" alt="${anime.title}" style="width: 200px; margin: 10px;">
+                <p>Rating: ${anime.score}/10</p>
+            `;
+            animeGallery.appendChild(container);
+        });
+    } catch (error) {
+        console.error('Error fetching anime data:', error);
+        animeGallery.innerHTML = '<p>Failed to load anime data. Please try again later.</p>';
     }
 }
 
-// Function to fetch and display football news
-async function fetchFootballNews() {
+function displayMockFootballNews() {
     const footballContent = document.getElementById("football-content");
     footballContent.innerHTML = ''; // Clear existing news
+    
+    const mockNews = [
+        { title: "Bundesliga Recap", description: "Exciting matches from the weekend.", link: "#" },
+        { title: "Transfer Rumors", description: "Latest transfer gossip from German clubs.", link: "#" },
+        { title: "Player Spotlight", description: "Rising stars in the Bundesliga.", link: "#" }
+    ];
 
-    const response = await fetch(footballNewsAPI, {
-        method: "GET",
-        headers: {
-            "x-rapidapi-host": "football-news-aggregator-live.p.rapidapi.com",
-            "x-rapidapi-key": "fba7c539c6mshfc3a999bb77a83dp124d46jsncd98fbb751b4", // Your API key
-        },
-    });
-
-    const newsData = await response.json();
-
-    newsData.data.forEach((news) => {
+    mockNews.forEach((news) => {
         const newsItem = document.createElement("div");
-        newsItem.innerHTML = `<h4>${news.title}</h4><p>${news.description}</p><a href="${news.link}" target="_blank">Read more</a>`;
+        newsItem.innerHTML = `
+            <h4>${news.title}</h4>
+            <p>${news.description}</p>
+            <a href="${news.link}" target="_blank">Read more</a>
+        `;
         footballContent.appendChild(newsItem);
     });
 }
 
 // Initial calls to fetch data
-fetchAnimeImages();
-fetchFootballNews();
+fetchAnimeData();
+displayMockFootballNews();
